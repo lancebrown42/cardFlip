@@ -8,20 +8,44 @@
 		-webkit-backface-visibility
 */
 .front {
-	z-index: 2;
+	z-index: 1;
+	/*backface-visibility: hidden;*/
 
 
 }
+.portfolio-item{
+	display: inline-block;
+	height: 200px;
+}
 .back {
-	position: absolute;
-	top: 111px;
-	opacity: 0;
+	z-index:-1;
+	position: relative;
+	top: -200px;
+	/*opacity: 0;*/
+	/*backface-visibility: hidden;*/
+	transform: rotateY(180deg);
 
 }
 div.back:hover{
 	/*transform: rotateY(180deg);*/
-	opacity: 1;
+	/*opacity: 1;*/
+	/*transition: .5s;*/
+	/*transform-style: preserve-3d;*/
 }
 div.front:hover{
-	transform: rotateY(0deg);
+	/*transform: rotateY(180deg);*/
+	/*transform-style: preserve-3d;*/
+	/*transition: 0s;*/
+	/*opacity: 0;*/
+}
+
+.portfolio {
+	/*perspective: 1000;*/
+}
+
+div.portfolio-item:hover {
+	transform: rotateY(180deg);
+	transition: 0.6s;
+	position: relative;
+	transform-style: preserve-3d;
 }
